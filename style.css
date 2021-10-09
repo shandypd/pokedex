@@ -1,0 +1,172 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pokedex {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pokemon {
+    float: left;
+    text-align: center;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.pokemon:nth-child(2n + 1) {
+    clear: both;
+}
+
+.poke-id {
+    color: #666;
+}
+
+.poke-name {
+    margin: 4px 0px 8px 0px;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #333;
+}
+
+.poke-type-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.poke-type {
+    display: inline-block;
+    width: 70px;
+    margin-left: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    color: #fff;
+    font-size: .75em;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+
+.poke-type.normal {
+    background-color: #aa9;
+}
+
+.poke-type.fire {
+    background-color: #f42;
+}
+
+.poke-type.water {
+    background-color: #39f;
+}
+
+.poke-type.electric {
+    background-color: #fc3;
+}
+
+.poke-type.grass {
+    background-color: #7c5;
+}
+
+.poke-type.ice {
+    background-color: #6cf;
+}
+
+.poke-type.fighting {
+    background-color: #b54;
+}
+
+.poke-type.poison {
+    background-color: #a59;
+}
+
+.poke-type.ground {
+    background-color: #db5;
+}
+
+.poke-type.flying {
+    background-color: #89f;
+}
+
+.poke-type.psychic {
+    background-color: #f59;
+}
+
+.poke-type.bug {
+    background-color: #ab2;
+}
+
+.poke-type.rock {
+    background-color: #ba6;
+}
+
+.poke-type.ghost {
+    background-color: #66b;
+}
+
+.poke-type.dragon {
+    background-color: #76e;
+}
+
+.poke-type.dark {
+    background-color: #754;
+}
+
+.poke-type.steel {
+    background-color: #aab;
+}
+
+.poke-type.fairy {
+    background-color: #e9e;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .pokemon {
+        width: 25%;
+    }
+
+    .pokemon:nth-child(2n + 1) {
+        clear: unset;
+    }
+
+    .pokemon:nth-child(4n + 1) {
+        clear: both;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .pokemon {
+        width: 20%;
+    }
+
+    .pokemon:nth-child(4n + 1) {
+        clear: unset;
+    }
+
+    .pokemon:nth-child(5n + 1) {
+        clear: both;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .pokemon {
+        width: 16.667%;
+    }
+
+    .pokemon:nth-child(5n + 1) {
+        clear: unset;
+    }
+
+    .pokemon:nth-child(6n + 1) {
+        clear: both;
+    }
+}
