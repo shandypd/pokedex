@@ -11,17 +11,14 @@ body {
 .pokedex {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .pokemon {
-    float: left;
+    flex: 0 1 50%;
     text-align: center;
-    width: 50%;
     margin-bottom: 20px;
-}
-
-.pokemon:nth-child(2n + 1) {
-    clear: both;
 }
 
 .poke-id {
@@ -29,7 +26,7 @@ body {
 }
 
 .poke-name {
-    margin: 4px 0px 8px 0px;
+    margin: 3px 0px 6px 0px;
     font-size: 1em;
     font-weight: bold;
     text-transform: capitalize;
@@ -44,7 +41,7 @@ body {
 
 .poke-type {
     display: inline-block;
-    width: 70px;
+    width: 75px;
     margin-left: 3px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -52,6 +49,7 @@ body {
     font-size: .75em;
     line-height: 1.8;
     text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .poke-type.normal {
@@ -129,44 +127,20 @@ body {
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
     .pokemon {
-        width: 25%;
-    }
-
-    .pokemon:nth-child(2n + 1) {
-        clear: unset;
-    }
-
-    .pokemon:nth-child(4n + 1) {
-        clear: both;
+        flex: 0 1 25%;
     }
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .pokemon {
-        width: 20%;
-    }
-
-    .pokemon:nth-child(4n + 1) {
-        clear: unset;
-    }
-
-    .pokemon:nth-child(5n + 1) {
-        clear: both;
+        flex: 0 1 20%;
     }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .pokemon {
-        width: 16.667%;
-    }
-
-    .pokemon:nth-child(5n + 1) {
-        clear: unset;
-    }
-
-    .pokemon:nth-child(6n + 1) {
-        clear: both;
+        flex: 0 1 16.667%;
     }
 }

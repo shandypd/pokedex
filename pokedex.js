@@ -1,9 +1,9 @@
 const API_BASE_URL = "https://pokeapi.co/api/v2";
 
-fetch(API_BASE_URL + "/pokemon?limit=151")
+fetch(API_BASE_URL + "/pokedex/2")
     .then(response => response.json())
     .then(data => {
-        return Promise.all(data.results.map(result => fetch(result.url)
+        return Promise.all(data.pokemon_entries.map(entry => fetch(API_BASE_URL + `/pokemon/${entry.pokemon_species.name}`)
             .then(response => response.json())
         ));
     })
@@ -59,7 +59,14 @@ function createPokemonNameText(data) {
 function createPokemonTypesList(data) {
     const el = document.createElement('ul');
 
-    for (let type of data.types) {
+    let types;
+    if (data.past_types.length > 0) {
+        types = data.past_types[0].types;
+    } else {
+        types = data.types;
+    }
+
+    for (let type of types) {
         const typeEl = createPokemonTypeItem(type.type.name);
         el.classList.add('poke-type-list');
         el.appendChild(typeEl);
